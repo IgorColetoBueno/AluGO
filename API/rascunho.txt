@@ -1,0 +1,6 @@
+Informações a trabalhar na API:
+
+    >CRUD completo de imóveis;
+        >CRUD de categorias de imóveis
+    >CRUD completo de pessoas (Locatário e locador) - Serão utilizados como usuários;
+        >CRUD de endereços (Vínculo com pessoas);
