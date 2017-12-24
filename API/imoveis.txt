@@ -1,0 +1,10 @@
+Informações necessárias em imóveis:
+
+Usuário dono do imóvel;
+Valor;
+Localização;
+Comentários;
+Nota;
+Avaliação;
+Descrição;
+Quantidade de Quartos;
