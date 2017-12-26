@@ -1,0 +1,20 @@
+Informações necessárias para usuários:
+
+Pessoa ->
+
+id;
+Nome;
+CPF;
+E-mail;
+Telefone;
+Cidade;
+Estado;
+País;
+Nota;
+Data de Nascimento;
+
+Locador ->
+Pessoa +
+
+Imóveis (objeto);
+Assinante (Boolean);
