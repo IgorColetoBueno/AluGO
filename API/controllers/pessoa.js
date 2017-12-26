@@ -6,11 +6,14 @@ const router = express.Router();
 const model = new Repository(pessoa);
 
 //GET ALL
-router.get('/',model.get);
+router.get('/',model.all);
 //GET BY ID
 router.get('/:id',model.getById);
-//INSERT OR UPDATE
+//INSERT
 router.post('/',model.save);
+//UPDATE
+router.put('/:id',model.update);
 //DELETE 
 router.delete('/:id',model.remove);
 
+export default router;

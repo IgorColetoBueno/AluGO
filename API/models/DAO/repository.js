@@ -1,14 +1,14 @@
-
-class Repository{    
-    constructor(Model){
-        this.Model = Model;
+var Model;
+class Repository {
+    constructor(parameter) {
+        Model = parameter;
     }
     //método para salvar a model passada como parâmetro
-    save(req, res){
+    save(req, res) {
         let model = new Model(req.body);
-
+        console.log(model)
         model
-            .insertOrUpdate()
+            .save()
             .then((created) => {
                 if (!created) {
                     return res
@@ -24,11 +24,34 @@ class Repository{
                 .json({ status: false, data: err })
             )
     };
+    //Update
+    update(req, res) {
+        let model = new Model(req.body);
+        model._id = req.params.id;
+        let obj = req.body;
 
-    //get service
-    get(req, res){
-        this.Model
-            .find(req.params.json())
+        Model
+            .updateOne({ _id: model._id }, obj)
+            .then((created) => {
+                if (!created) {
+                    return res
+                        .status(404)
+                        .json({ status: false, data: {} })
+                }
+                return res
+                    .status(202)
+                    .json({ status: true, data: obj })
+            })
+            .catch(err => res
+                .status(500)
+                .json({ status: false, data: err })
+            )
+    };
+
+    //get all service
+    all(req, res) {
+        Model
+            .find()
             .then((models) => {
                 if (!models || !models.length) {
                     return res.status(404)
@@ -51,9 +74,9 @@ class Repository{
                 })
             );
     };
-
+    
     //get by id service
-    getById(req, res){
+    getById(req, res) {
         this.Model
             .findOne({
                 _id: req.params.id
@@ -83,7 +106,7 @@ class Repository{
     };
 
     //delete service
-    remove(req, res){
+    remove(req, res) {
         this.Model.findByIdAndRemove(req.params.id)
             .then(() => res.status(204).end())
             .catch(err => res.status(500)
