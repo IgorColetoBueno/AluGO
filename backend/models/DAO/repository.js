@@ -6,7 +6,6 @@ class Repository {
     //método para salvar a model passada como parâmetro
     save(req, res) {
         let model = new Model(req.body);
-        console.log(model)
         model
             .save()
             .then((created) => {
@@ -74,7 +73,7 @@ class Repository {
                 })
             );
     };
-    
+
     //get by id service
     getById(req, res) {
         this.Model
@@ -107,10 +106,29 @@ class Repository {
 
     //delete service
     remove(req, res) {
-        this.Model.findByIdAndRemove(req.params.id)
-            .then(() => res.status(204).end())
-            .catch(err => res.status(500)
-                .json({ status: false, data: {} }))
+        Model.findByIdAndRemove(req.params.id)
+            .then((deleted) => {
+                if (!deleted) {
+                    return res
+                        .status(404)
+                        .json(
+                        {
+                            status: false,
+                            data: {}
+                        })
+                }
+                return res
+                    .status(200)
+                    .json(
+                    {
+                        status: true,
+                        data: deleted
+                    })
+            })
+            .catch(err => {
+                return res.status(500)
+                    .json({ status: false, data: {} })
+            })
     }
 }
 export default Repository;

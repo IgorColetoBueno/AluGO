@@ -3,16 +3,18 @@ import mongoose from "mongoose";
 var Pessoas = mongoose.Schema({
     nome: {
         type: String,
-        required: true
+        required: true,
+        max:30
     },
     sobrenome: {
         type: String,
-        required: true
+        required: true,
+        max:40
     },
     cpf: {
         type: String,
-        min: 11,
-        max: 11,
+        min: 14,
+        max: 14,
         required: true
     },
     telefone: {
@@ -25,37 +27,41 @@ var Pessoas = mongoose.Schema({
     endereco: {
         type: [{
             logradouro: {
-                type: String
+                type: String,
+                max:50
             },
             numero: {
-                type: Number
+                type: Number,
+                max:15
             },
             bairro: {
-                type: String
+                type: String,
+                max:40
             },
             complemento: {
-                type: String
+                type: String,
+                max:40
             },
             cep: {
-                type: String
+                type: String,
+                max:15
             },
             cidade: {
-                type: String
+                type: String,
+                max:40
             },
             uf: {
-                type: String
+                type: String,
+                max:2
             },
             pais: {
-                type: String
+                type: String,
+                max:20
             }
         }]
     },
     nota: {
         type: Number,
-        required: true
-    },
-    dataNasc: {
-        type: Date,
         required: true
     },
     lastChanges: {
