@@ -20,16 +20,16 @@ class HeaderComponent extends Component {
         let { isOpen } = this.state
         return (
             <header>
-                <Navbar color="faded" toggleable inverse className="navbar-custom bg-primary navbar-expand-sm navbar-dark">
-                    <NavbarToggler right onClick={this.toggleNavbar} />
-                    <NavbarBrand href="/">Finch</NavbarBrand>
-                    <Collapse isOpen={isOpen} navbar>
+                <Navbar color="faded" light toggleable dark className="bg-primary navbar-expand-md">
+                    <NavbarToggler onClick={this.toggleNavbar} />
+                    <NavbarBrand href="/" style={{ 'fontFamily': 'Pacifico', 'paddingLeft':'50px'}}>Alu<strong style={{ 'fontFamily': 'Roboto' }}>GO!</strong></NavbarBrand>
+                    <Collapse isOpen={isOpen} navbar >
                         <Nav navbar>
-                            <NavItem>
-                                <NavLink href="/category">Category</NavLink>
+                            <NavItem active>
+                                <NavLink href="/imoveis">Imóveis</NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink href="/bill">Bill</NavLink>
+                            <NavItem active>
+                                <NavLink href="/anunciar">Quero anunciar</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
