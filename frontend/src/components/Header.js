@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import HeaderActions from '../actions/Header'
 import React, { Component } from 'react'
 import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from 'reactstrap'
+import Imoveis from './imoveis/Imoveis';
 
 class Header extends Component {
     constructor(props) {
