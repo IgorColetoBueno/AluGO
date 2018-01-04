@@ -1,0 +1,1 @@
+export const ON_TOGGLE = 'ON_TOGGLE';

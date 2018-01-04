@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './../logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './../App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 //Components
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './../components/Header';
+import Footer from './../components/Footer';
 
 class App extends Component {
   render() {
