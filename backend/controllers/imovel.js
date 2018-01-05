@@ -1,11 +1,10 @@
 import express from 'express';
-import Repository from './../models/DAO/repository';
 import imovel from './../models/entities/imovel';
 import DAO from '../models/DAO/imovelDAO';
 import imovelDAO from '../models/DAO/imovelDAO';
 
 const router = express.Router();
-const dao = new imovelDAO(imovel);
+const dao = new imovelDAO();
 
 //GET ALL
 router.get('/',dao.all);

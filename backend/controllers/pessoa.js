@@ -1,10 +1,8 @@
 import express from 'express';
-import Repository from './../models/DAO/repository';
 import PessoaDAO from './../models/DAO/pessoaDAO';
-import pessoa from './../models/entities/pessoa';
 
 const router = express.Router();
-const dao = new PessoaDAO(pessoa);
+const dao = new PessoaDAO();
 
 //GET ALL
 router.get('/',dao.all);

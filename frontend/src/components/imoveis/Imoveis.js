@@ -13,7 +13,7 @@ class Imoveis extends Component {
     toggleNavbar() {
         this.props.onToggle();
     }
-
+    
     render() {
         return (
             <Container>

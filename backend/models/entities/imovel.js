@@ -19,37 +19,32 @@ var Imoveis = mongoose.Schema({
         }
     },
     comentarios: {
-        type: [{
-            pessoa: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Pessoas',
-                required: true
-            },
-            comentario: {
-                type: String,
-                required: true,
-                max: 200
-            },
-            nota: {
-                type: Number
-            }
-        }],
-        required:false
+        type: [],
+        pessoa: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Pessoas'
+        },
+        comentario: {
+            type: String,
+            max: 200
+        },
+        nota: {
+            type: Number
+        }
     },
     descricao: {
         type: String,
         required: true
     },
     caracteristicas: {
-        type: [{
-            nome: {
-                type: String
-            },
-            valor: {
-                type: String
-            }
-        }]
+        type: [],
+        nome: {
+            type: String
+        },
+        valor: {
+            type: String
+        }
     }
 });
 
-export default mongoose.model("Imoveis",Imoveis);
+export default mongoose.model("Imoveis", Imoveis);
