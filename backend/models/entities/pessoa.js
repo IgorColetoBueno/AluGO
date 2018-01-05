@@ -70,6 +70,7 @@ var Pessoas = mongoose.Schema({
     },
     assinante: {
         type: Boolean,
+        default:false,
         required: true
     }
 });

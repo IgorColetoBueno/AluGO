@@ -17,8 +17,7 @@ class ImovelCard extends Component {
     }
 
     onClick() {
-        debugger;
-        this.history.push("/teste");
+        window.location.href = "/imoveis/" + this.state.id;
     }
 
     render() {

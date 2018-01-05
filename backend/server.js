@@ -16,7 +16,7 @@ export default (app) => {
         });
 
     //Criação do servidor
-    app.listen(3000, () => {
+    app.listen(9000, () => {
         console.log('Servidor express iniciado com sucesso!');
     })
 

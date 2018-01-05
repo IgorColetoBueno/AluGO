@@ -1,19 +1,20 @@
 import express from 'express';
 import Repository from './../models/DAO/repository';
+import PessoaDAO from './../models/DAO/pessoaDAO';
 import pessoa from './../models/entities/pessoa';
 
 const router = express.Router();
-const model = new Repository(pessoa);
+const dao = new PessoaDAO(pessoa);
 
 //GET ALL
-router.get('/',model.all);
+router.get('/',dao.all);
 //GET BY ID
-router.get('/:id',model.getById);
+router.get('/:id',dao.getById);
 //INSERT
-router.post('/',model.save);
+router.post('/',dao.save);
 //UPDATE
-router.put('/:id',model.update);
+router.put('/:id',dao.update);
 //DELETE 
-router.delete('/:id',model.remove);
+router.delete('/:id',dao.remove);
 
 export default router;

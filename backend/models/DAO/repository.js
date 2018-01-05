@@ -49,9 +49,11 @@ class Repository {
 
     //get all service
     all(req, res) {
+        debugger;
         Model
             .find()
             .then((models) => {
+                console.log(models)
                 if (!models || !models.length) {
                     return res.status(404)
                         .json({

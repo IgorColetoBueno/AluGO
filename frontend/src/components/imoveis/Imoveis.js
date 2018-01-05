@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react'
-import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 
 class Imoveis extends Component {
     constructor(props) {
@@ -16,7 +16,9 @@ class Imoveis extends Component {
 
     render() {
         return (
-            <div></div>
+            <Container>
+                
+            </Container>
         )
     }
 }
