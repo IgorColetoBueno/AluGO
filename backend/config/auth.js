@@ -1,5 +1,4 @@
-import pessoa from './controllers/pessoa';
-import imovel from './controllers/imovel';
+import passport from 'passport';
 
 export default (app) => {
     app.use('/pessoas',pessoa);

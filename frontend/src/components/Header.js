@@ -29,7 +29,7 @@ class Header extends Component {
                             </NavItem>
                             <NavItem active>
                                 <NavLink href="/anunciar">Quero anunciar</NavLink>
-                            </NavItem>
+                            </NavItem>                            
                         </Nav>
                     </Collapse>
                 </Navbar>

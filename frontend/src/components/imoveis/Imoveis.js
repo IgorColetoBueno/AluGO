@@ -1,23 +1,22 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
-
+import Card from './ImovelCard';
 class Imoveis extends Component {
     constructor(props) {
         super(props)
 
-        this.state = { isOpen: false }
-        this.toggleNavbar = this.toggleNavbar.bind(this)
-    }
-
-    toggleNavbar() {
-        this.props.onToggle();
+        this.state = {
+            data : this.props.data            
+        }
     }
     
     render() {
         return (
             <Container>
-                
+                {this.state.data.forEach(element => {
+                    
+                })}
             </Container>
         )
     }
@@ -38,4 +37,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 //Exporta o Counter com com os mapeamentos
-// export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Imoveis)
