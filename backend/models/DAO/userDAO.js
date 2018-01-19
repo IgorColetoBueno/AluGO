@@ -5,7 +5,13 @@ class UserDAO {
 
     }
     save(req, res) {
+        //Cria a instância da model
         let model = new User(req.body);
+        //Encripta a senha
+        model.hashPassword(model.password, (err, encPass) => {
+            model.password = encPass;
+        });
+        //Executa o salvamento
         model
             .save()
             .then((created) => {

@@ -1,5 +1,5 @@
 import express from 'express';
-import DAO from '../models/DAO/imovelDAO';
+import imovelDAO from '../models/DAO/imovelDAO';
 
 const router = express.Router();
 const dao = new imovelDAO();

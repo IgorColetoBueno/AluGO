@@ -1,8 +1,8 @@
 import express from 'express';
-import PessoaDAO from './../models/DAO/pessoaDAO';
+import UserDAO from './../models/DAO/userDAO';
 
 const router = express.Router();
-const dao = new PessoaDAO();
+const dao = new UserDAO();
 
 //GET ALL
 router.get('/',dao.all);
