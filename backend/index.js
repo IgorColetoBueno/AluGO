@@ -7,7 +7,7 @@ import cors from 'cors';
 import server from './config/server';
 import routes from './config/routes';
 import passport from 'passport';
-import { Strategy } from 'passport-http-bearer';
+import auth from './config/auth/index';
 import User from './models/entities/user';
 //Uso do express
 const app = express();
@@ -17,10 +17,12 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
-
+app.use(passport.initialize());
+//Definições de autenticação
+auth(passport);
 
 //Chamada ao servidor
 server(app);
 
 //Definição das rotas
-routes(app);
+routes(app, passport);

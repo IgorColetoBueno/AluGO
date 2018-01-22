@@ -52,7 +52,6 @@ class ImovelDAO {
             .find()
             .populate('pessoa')
             .then((models) => {
-                console.log(models)
                 if (!models || !models.length) {
                     return res.status(404)
                         .json({
