@@ -1,1 +1,2 @@
-export const base_adress = "http://localhost:9000";
+export const BASE_ADRESS = "http://localhost:9000";
+export const TOKEN = "Teste"; 
