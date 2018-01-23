@@ -14,9 +14,6 @@ class Imoveis extends Component {
     render() {
         return (
             <Container>
-                {this.state.data.forEach(element => {
-                    
-                })}
             </Container>
         )
     }

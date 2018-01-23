@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardTitle, CardSubtitle } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
-import {Col} from 'reactstrap';
+import { Col } from 'reactstrap';
 
 class ImovelCard extends Component {
     constructor(props) {
@@ -26,10 +26,8 @@ class ImovelCard extends Component {
             <Col lg="4" sm="1">
                 <Card onClick={this.onClick}>
                     <CardImg top width="100%" src={this.state.image} alt="Imóvel" />
-                    <CardBody>
-                        <CardTitle>{this.state.title}</CardTitle>
-                        <CardSubtitle>{this.state.subtitle}</CardSubtitle>
-                    </CardBody>
+                    <CardTitle>{this.state.title}</CardTitle>
+                    <CardSubtitle>{this.state.subtitle}</CardSubtitle>
                 </Card>
             </Col>
         )
