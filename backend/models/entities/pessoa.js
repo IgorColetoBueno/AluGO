@@ -19,8 +19,8 @@ var Pessoas = mongoose.Schema({
     },
     telefone: {
         type: [],
-        min:8,
-        max:15
+        min: 8,
+        max: 15
     },
     email: {
         type: [],
@@ -63,7 +63,7 @@ var Pessoas = mongoose.Schema({
     },
     nota: {
         type: Number,
-        max:2,
+        max: 2,
         required: true
     },
     lastChanges: {
@@ -73,6 +73,10 @@ var Pessoas = mongoose.Schema({
     assinante: {
         type: Boolean,
         default: false
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     }
 });
 

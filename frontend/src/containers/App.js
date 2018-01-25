@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './../components/Header';
 import Footer from './../components/Footer';
 import Imoveis from './../components/imoveis/Imoveis';
+import Anunciar from './../components/imoveis/Anunciar';
 
 class App extends Component {
   render() {
@@ -18,7 +19,7 @@ class App extends Component {
         <Footer />
         <Router>
           <div>
-            <Route></Route>
+            <Route exact path="/imoveis/anunciar" component={Anunciar}/>
           </div>
         </Router>
       </div>

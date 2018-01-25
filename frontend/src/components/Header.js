@@ -28,7 +28,7 @@ class Header extends Component {
                                 <NavLink href="/imoveis">Imóveis</NavLink>
                             </NavItem>
                             <NavItem active>
-                                <NavLink href="/anunciar">Quero anunciar</NavLink>
+                                <NavLink href="/imoveis/anunciar">Quero anunciar</NavLink>
                             </NavItem>                            
                         </Nav>
                     </Collapse>
