@@ -19,15 +19,15 @@ var Pessoas = mongoose.Schema({
     },
     telefone: {
         type: [],
-        min: 8,
-        max: 15
+        min: 1,
+        max: 2
     },
     email: {
-        type: [],
+        type: String,
         required: true
     },
     endereco: {
-        type: [],
+        type: {},
         logradouro: {
             type: String,
             max: 50
@@ -63,7 +63,8 @@ var Pessoas = mongoose.Schema({
     },
     nota: {
         type: Number,
-        max: 2,
+        min: 0,
+        max: 10,
         required: true
     },
     lastChanges: {

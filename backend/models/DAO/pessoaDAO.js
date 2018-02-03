@@ -1,27 +1,56 @@
 import Pessoa from '../entities/pessoa';
-
+import User from '../entities/user';
 class PessoaDAO {
     constructor() {
 
     }
     save(req, res) {
         let model = new Pessoa(req.body);
-        model
+        //Criando um objeto de usuário
+        let user = new User({
+            name: `${req.body.nome} ${req.body.sobrenome}`,
+            username: req.body.email,
+            password: req.body.password
+        });
+        //Encriptando a senha
+        user.hashPassword(user.password, (err, encPass) => {
+            user.password = encPass;
+        });
+        //Executa o salvamento
+        user
             .save()
-            .then((created) => {
-                if (!created) {
+            .then((userCreated) => {
+                if (!userCreated) {
                     return res
                         .status(404)
                         .json({ status: false, data: {} })
                 }
-                return res
-                    .status(201)
-                    .json({ status: true, data: created })
+                //Insere o id do usuário na pessoa
+                model.user = userCreated._id;
+                //salva a pessoa vinculada ao usuário
+                model
+                    .save()
+                    .then((pessoaCreated) => {
+                        if (!pessoaCreated) {
+                            return res
+                                .status(404)
+                                .json({ status: false, data: {} })
+                        }
+                        return res
+                            .status(201)
+                            .json({ status: true, data: pessoaCreated })
+                    })
+                    .catch(err => res
+                        .status(500)
+                        .json({ status: false, data: err })
+                    )
+                //finaliza o salvamento da pessoa vinculada ao usuário
             })
             .catch(err => res
                 .status(500)
                 .json({ status: false, data: err })
             )
+
     };
     //Update
     update(req, res) {

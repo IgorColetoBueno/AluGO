@@ -1,7 +1,10 @@
 import { connect } from 'react-redux';
 import HeaderActions from '../actions/Header'
 import React, { Component } from 'react'
-import { Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse } from 'reactstrap'
+import {
+    Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Collapse, DropdownMenu,
+    DropdownItem, DropdownToggle, UncontrolledDropdown
+} from 'reactstrap'
 import Imoveis from './imoveis/Imoveis';
 
 class Header extends Component {
@@ -29,7 +32,19 @@ class Header extends Component {
                             </NavItem>
                             <NavItem active>
                                 <NavLink href="/imoveis/anunciar">Quero anunciar</NavLink>
-                            </NavItem>                            
+                            </NavItem>
+                        </Nav>
+                        <Nav navbar className="ml-auto">
+                            <UncontrolledDropdown nav inNavbar>
+                                <DropdownToggle nav caret className="active">
+                                    User
+                                </DropdownToggle>
+                                <DropdownMenu>
+                                    <DropdownItem>
+                                        Teste
+                                    </DropdownItem>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
                         </Nav>
                     </Collapse>
                 </Navbar>
