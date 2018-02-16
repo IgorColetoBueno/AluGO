@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js --exec babel-node",
-    "build": "babel index.js -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel index.js -d dist"
   },
   "keywords": [
     "API"

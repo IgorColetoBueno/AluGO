@@ -18,6 +18,41 @@ var Imoveis = mongoose.Schema({
             type: Number
         }
     },
+    endereco: {
+        type: {},
+        logradouro: {
+            type: String,
+            max: 50
+        },
+        numero: {
+            type: Number,
+            max: 15
+        },
+        bairro: {
+            type: String,
+            max: 40
+        },
+        complemento: {
+            type: String,
+            max: 40
+        },
+        cep: {
+            type: String,
+            max: 15
+        },
+        cidade: {
+            type: String,
+            max: 40
+        },
+        uf: {
+            type: String,
+            max: 2
+        },
+        pais: {
+            type: String,
+            max: 20
+        }
+    },
     comentarios: {
         type: [],
         pessoa: {
