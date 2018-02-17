@@ -18,7 +18,10 @@ export default (app) => {
     mongoose.Promise = global.Promise;
 
     //Criação do servidor
-    app.listen(9000, () => {
+    app.listen(9001, (err) => {
+        if (err) {
+            console.log(err)
+        }
         console.log('Servidor express iniciado com sucesso!');
     })
 
