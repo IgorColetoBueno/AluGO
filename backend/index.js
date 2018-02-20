@@ -4,11 +4,11 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import server from './config/server';
-import routes from './config/routes';
+import server from './src/config/server';
+import routes from './src/config/routes';
 import passport from 'passport';
-import auth from './config/auth/index';
-import User from './models/entities/user';
+import auth from './src/config/auth/index';
+import User from './src/models/entities/user';
 //Uso do express
 const app = express();
 

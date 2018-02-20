@@ -20,6 +20,7 @@ var Imoveis = mongoose.Schema({
     },
     endereco: {
         type: {},
+        required: true,
         logradouro: {
             type: String,
             max: 50
@@ -34,7 +35,8 @@ var Imoveis = mongoose.Schema({
         },
         complemento: {
             type: String,
-            max: 40
+            max: 40,
+            required: false
         },
         cep: {
             type: String,

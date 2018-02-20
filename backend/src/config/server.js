@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export default (app) => {
     //Conexão com o MongoDB
-    let db = mongoose.connect('mongodb://localhost:27017/AluGO',
+    let db = mongoose.connect('mongodb://localhost:27017/alugo',
         {
             useMongoClient: true
         },
@@ -18,7 +18,7 @@ export default (app) => {
     mongoose.Promise = global.Promise;
 
     //Criação do servidor
-    app.listen(9001, (err) => {
+    app.listen(process.env.PORT || 3000, (err) => {
         if (err) {
             console.log(err)
         }

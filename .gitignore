@@ -56,6 +56,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-#Config archives
-backend/config/auth/config.js

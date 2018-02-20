@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import Header from './Header';
+import Pessoas from './pessoas';
+import Imoveis from './imoveis';
 
 export default combineReducers({
-	header: Header
+	pessoas: Pessoas,
+	imoveis: Imoveis
 })

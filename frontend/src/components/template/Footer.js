@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import marcaAlugo from '../../assets/images/marca-alugo-branca.svg';
 class Footer extends Component {
     constructor(props) {
         super(props);
@@ -11,7 +12,7 @@ class Footer extends Component {
                         <div className="col-12 col-md-3">
                             <div className="media-wrap">
                                 <a href="#/">
-                                    <img src="assets/images/marca-alugo-branca.svg" alt="Mobirise" title />
+                                    <img src={marcaAlugo} alt="AluGO" title />
                                 </a>
                             </div>
                         </div>
