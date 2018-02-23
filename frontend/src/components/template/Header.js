@@ -7,41 +7,41 @@ class Header extends Component {
     }
     render() {
         return (
-            <section className="menu cid-qIEZHIfjGn" once="menu" id="menu1-e">
-                <nav className="navbar beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
-                    <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <div className="hamburger">
-                            <span />
-                            <span />
-                            <span />
-                            <span />
-                        </div>
-                    </button>
-                    <div className="menu-logo">
-                        <div className="navbar-brand">
-                            <span className="navbar-logo">
-                                <a href="/">
-                                    <img src={logo} alt="AluGO" title />
-                                </a>
-                            </span>
-                        </div>
+            <nav id="mainNav" className="navbar navbar-default navbar-fixed-top">
+                <div className="container-fluid">
+                    {/* Brand and toggle get grouped for better mobile display */}
+                    <div className="navbar-header">
+                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span className="sr-only">Toggle navigation</span>
+                            <span className="icon-bar" />
+                            <span className="icon-bar" />
+                            <span className="icon-bar" />
+                        </button>
+                        <a className="navbar-brand page-scroll" href="#page-top">
+                            <img src={logo} width={60} height={20} />
+                        </a>
                     </div>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
-                            <li className="nav-item">
-                                <a className="nav-link link text-black h5" href="/imoveis">
-                                    <span className="mbr-iconfont mbr-iconfont-btn" />
-                                    Imóveis</a>
+                    {/* Collect the nav links, forms, and other content for toggling */}
+                    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul className="nav navbar-nav navbar-right">
+                            <li>
+                                <a className="page-scroll" href="#about">Sobre</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link link text-black h5" href="/imoveis/filtrar">
-                                    <span className="mbr-iconfont mbr-iconfont-btn" />
-                                    Filtrar</a>
+                            <li>
+                                <a className="page-scroll" href="#services">Serviços</a>
+                            </li>
+                            <li>
+                                <a className="page-scroll" href="#portfolio">Portfolio</a>
+                            </li>
+                            <li>
+                                <a className="page-scroll" href="#contact">Contato</a>
                             </li>
                         </ul>
                     </div>
-                </nav>
-            </section>
+                    {/* /.navbar-collapse */}
+                </div>
+                {/* /.container-fluid */}
+            </nav>
         )
     }
 }
