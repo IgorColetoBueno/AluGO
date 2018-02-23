@@ -2,10 +2,11 @@
   "name": "alugo-api",
   "version": "1.0.0",
   "description": "API destinada a servir dados ao AluGO!",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "nodemon index.js --exec babel-node",
-    "build": "babel index.js -d dist"
+    "dev": "nodemon src/index.js --exec babel-node",
+    "start": "node dist/index.js",
+    "postinstall": "npx babel --no-babelrc src --out-dir dist --presets=env"
   },
   "keywords": [
     "API"
@@ -15,20 +16,21 @@
   "dependencies": {
     "bcrypt-node": "^0.1.0",
     "body-parser": "^1.18.2",
+    "check-node-version": "^3.2.0",
+    "cluster": "^0.7.7",
     "cors": "^2.8.4",
     "express": "^4.16.2",
-    "express-validator": "^4.3.0",
+    "helmet": "^3.11.0",
     "jwt-simple": "^0.5.1",
     "mongoose": "^4.13.7",
     "morgan": "^1.9.0",
+    "os": "^0.1.1",
     "passport": "^0.4.0",
-    "passport-http-bearer": "^1.0.1",
-    "passport-jwt": "^3.0.1",
-    "rimraf": "^2.6.2"
+    "passport-jwt": "^3.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "nodemon": "^1.14.1"
   }
 }

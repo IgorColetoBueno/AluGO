@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
 
 export default (app) => {
-    //Conexão com o MongoDB
-    let db = mongoose.connect('mongodb://dbalugo:8+8AwChE[_5cV@mongo_alugo:27017:27017/alugo',
+    //Conexão com o MongoDB para o backend
+    //    let db = mongoose.connect('mongodb://localhost:27017/AluGO',
+    let db = mongoose.connect('mongodb://dbalugo:8+8AwChE[_5cV@mongo_alugo:27017/alugo',
         {
             useMongoClient: true
         },
@@ -17,7 +18,7 @@ export default (app) => {
 
     mongoose.Promise = global.Promise;
 
-    const port =   3000||process.env.PORT;
+    const port = 3000 || process.env.PORT;
     //Criação do servidor
     app.listen(port, (err) => {
         if (err) {
