@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import Imoveis from './../imoveis/Imoveis';
 import Anunciar from './../imoveis/Anunciar';
 import NewUser from './../users/Novo';
-import Home from './../template/Home';
+import Home from './../home/Home';
 
 class Routes extends Component {
     constructor(props) {
