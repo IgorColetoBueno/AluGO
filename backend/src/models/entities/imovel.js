@@ -1,6 +1,48 @@
 import mongoose from 'mongoose';
 
-var Imoveis = mongoose.Schema({
+
+const Endereco = mongoose.Schema({
+    logradouro: {
+        type: String,
+        max: 50,
+        required: true
+    },
+    numero: {
+        type: Number,
+        max: 15,
+    },
+    bairro: {
+        type: String,
+        max: 40,
+        required: true
+    },
+    complemento: {
+        type: String,
+        max: 40,
+        required: true
+    },
+    cep: {
+        type: String,
+        max: 15,
+        required: true
+    },
+    cidade: {
+        type: String,
+        max: 40,
+        required: true
+    },
+    uf: {
+        type: String,
+        max: 2,
+        required: true
+    },
+    pais: {
+        type: String,
+        max: 20,
+        required: true
+    }
+})
+const Imoveis = mongoose.Schema({
     pessoa: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Pessoas',
@@ -18,43 +60,7 @@ var Imoveis = mongoose.Schema({
             type: Number
         }
     },
-    endereco: {
-        type: {},
-        required: true,
-        logradouro: {
-            type: String,
-            max: 50
-        },
-        numero: {
-            type: Number,
-            max: 15
-        },
-        bairro: {
-            type: String,
-            max: 40
-        },
-        complemento: {
-            type: String,
-            max: 40,
-            required: false
-        },
-        cep: {
-            type: String,
-            max: 15
-        },
-        cidade: {
-            type: String,
-            max: 40
-        },
-        uf: {
-            type: String,
-            max: 2
-        },
-        pais: {
-            type: String,
-            max: 20
-        }
-    },
+    endereco: Endereco,
     comentarios: {
         type: [],
         pessoa: {
