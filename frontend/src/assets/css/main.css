@@ -272,7 +272,18 @@ header {
   border-radius: 300px;
   font-weight: 700;
   text-transform: uppercase; }
-
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  .mt-30{
+    margin-top : 30px;
+  }
+  .input-small{
+    width: 40%;
+    text-align: center;
+  }
 .btn-xl {
   padding: 15px 30px; }
 

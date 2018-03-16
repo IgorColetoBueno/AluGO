@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Banner from './Banner';
 import Sobre from './Sobre';
 import Servicos from './Servicos';
-import Portfolio from './Portfolio';
+// import Portfolio from './Portfolio';
 import Contato from './Contato';
 
 class Home extends Component {
@@ -16,7 +16,7 @@ class Home extends Component {
                 <Banner/>
                 <Sobre/>
                 <Servicos/>
-                <Portfolio/>
+                {/* <Portfolio/> */}
                 <Contato/>
             </div>
         )

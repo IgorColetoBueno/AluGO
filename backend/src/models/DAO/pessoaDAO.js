@@ -141,18 +141,18 @@ class PessoaDAO {
                     return res
                         .status(404)
                         .json(
-                        {
-                            status: false,
-                            data: {}
-                        })
+                            {
+                                status: false,
+                                data: {}
+                            })
                 }
                 return res
                     .status(200)
                     .json(
-                    {
-                        status: true,
-                        data: deleted
-                    })
+                        {
+                            status: true,
+                            data: deleted
+                        })
             })
             .catch(err => {
                 return res.status(500)

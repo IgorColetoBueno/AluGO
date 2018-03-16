@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: {
         path: __dirname + '/public',
         filename: './app.js'
@@ -12,7 +12,7 @@ module.exports = {
         contentBase: './public'
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js','.jsx'],
         alias: {
             modules: __dirname + '/node_modules',
             jquery: 'modules/jquery/dist/jquery.min.js',
@@ -23,14 +23,17 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            Popper: 'popper'
+            'window.jQuery': 'jquery'
+        }),
+        new webpack.ProvidePlugin({            
+            Popper: 'popper',
+            popper: 'popper'
         }),
         new ExtractTextPlugin('app.css')
     ],
     module: {
         loaders: [{
-            test: /.js?$/,
+            test: /.js[x]?$/,
             loader: 'babel-loader',
             exclude: /node_modules/,
             query: {
