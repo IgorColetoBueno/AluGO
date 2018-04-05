@@ -4,7 +4,13 @@
  */
 section {
   background-color: #eeeeee; }
-#
+
+#alugo-navbar{
+  position:unset;
+}
+form{
+  padding-top: 30px;
+}
 section,
 .container,
 .container-fluid {

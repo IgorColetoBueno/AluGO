@@ -25,7 +25,7 @@ class User extends Component {
     render() {
         let isLogin = this.state.isLogin;
         return (
-            <div className="cid-qIEZHK1hYl mbr-fullscreen mt-30 align-center">
+            <div className="cid-qIEZHK1hYl mbr-fullscreen align-center">
                 <Container className="align-center">
                     <Row>
                         <Grid cols="12 6 6 6">

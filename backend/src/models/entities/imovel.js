@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-
 const Endereco = mongoose.Schema({
     logradouro: {
         type: String,
@@ -42,6 +41,15 @@ const Endereco = mongoose.Schema({
         required: true
     }
 })
+
+const Caracteristica = mongoose.Schema({
+    nome: {
+        type: String
+    },
+    valor: {
+        type: String
+    }
+})
 const Imoveis = mongoose.Schema({
     pessoa: {
         type: mongoose.Schema.Types.ObjectId,
@@ -79,15 +87,7 @@ const Imoveis = mongoose.Schema({
         type: String,
         required: true
     },
-    caracteristicas: {
-        type: [],
-        nome: {
-            type: String
-        },
-        valor: {
-            type: String
-        }
-    }
+    caracteristicas: [Caracteristica]
 });
 
 export default mongoose.model("Imoveis", Imoveis);

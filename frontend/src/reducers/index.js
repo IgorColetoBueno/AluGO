@@ -3,7 +3,6 @@ import Pessoas from './pessoas';
 import Imoveis from './imoveis';
 import { reducer as formReducer } from 'redux-form';
 import { reducer as toastrReducer } from 'react-redux-toastr';
-// import Auth from './auth';
 
 export default combineReducers({
 	pessoas: Pessoas,

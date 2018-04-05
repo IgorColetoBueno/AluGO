@@ -8,7 +8,7 @@ class Header extends Component {
     render() {
         return (
             <section className="menu cid-qIEZHIfjGn" id="menu1-e">
-                <nav className="navbar beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+                <nav id="alugo-navbar" className="navbar beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
                     <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <div className="hamburger">
                             <span />

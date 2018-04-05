@@ -11,21 +11,27 @@ class SignInForm extends Component {
         const { handleSubmit } = this.props;
         return (
             <form role="form" onSubmit={handleSubmit}>
-                <div>
-                    <Field
-                        name="username"
-                        component={LabelAndInput}
-                        type="email"
-                        label="Email: "
-                        placeholder="Digite o email" />
-                    <Field
-                        name="password"
-                        component={LabelAndInput}
-                        label="Senha: "
-                        type="password"
-                        placeholder="Senha"
-                    />
-                </div>
+                <Container>
+                    <Row>
+                        <Col md="12">
+                            <Field
+                                name="username"
+                                component={LabelAndInput}
+                                type="email"
+                                label="Email: "
+                                placeholder="Digite o email" />
+                        </Col>
+                        <Col md="12">
+                            <Field
+                                name="password"
+                                component={LabelAndInput}
+                                label="Senha: "
+                                type="password"
+                                placeholder="Senha"
+                            />
+                        </Col>
+                    </Row>
+                </Container>
                 <button type="submit" className="btn btn-primary">Entrar</button>
             </form>
         )

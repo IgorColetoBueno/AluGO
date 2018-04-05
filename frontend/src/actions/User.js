@@ -8,21 +8,19 @@ axios.defaults.baseURL = BASE_URL;
 const cookie = new Cookies();
 
 export function create(user) {
-    user = {...user, nota : 10};
-    console.log(user)
+    user = {...user, nota : 7};
     return dispatch => axios.post('/pessoas', user)
         .then(response => {
-            toastr.success('Usuário criado com sucesso, você já pode fazer o login!')            
+            toastr.success('Usuário criado com sucesso, você está pronto para anunciar se quiser!')      
+            login(response.data)      
         })
         .catch(err => {
-            console.log(err)
             toastr.error('Erro!', err)
         })
 
 }
 
 export function login(user) {
-    console.log(user)
     return dispatch => axios.post('/user/token', user)
         .then(response => {
             if (!response.status) {
@@ -30,7 +28,7 @@ export function login(user) {
             }
            generateToken(response.data.token)
             //Informa que a operação deu certo
-            toastr.success('Login realizado com sucesso!')
+            toastr.success('Login realizado com sucesso, você está pronto para anunciar se quiser!')
 
         })
         .catch(err => {
