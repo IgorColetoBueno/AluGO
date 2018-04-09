@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Col } from 'reactstrap'
-import { Field, arrayInsert, arrayRemove, reduxForm , formValueSelector} from 'redux-form'
+import { Field, arrayInsert, arrayRemove, reduxForm, formValueSelector } from 'redux-form'
 import Input from '../template/form-utils/Input';
 import If from '../template/operators/If';
 
@@ -79,11 +79,8 @@ AnunciarThirdPage = reduxForm({
     forceUnregisterOnUnmount: true
 })(AnunciarThirdPage)
 
-//cria o formValueSelector a partir deste form
-const selector = formValueSelector('anunciarForm');
-
 const mapStateToProps = state => ({
-    caracteristicas: selector(state, 'caracteristicas')
+    
 })
 const mapDispatchToProps = dispatch => bindActionCreators({ arrayInsert, arrayRemove }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(AnunciarThirdPage)
